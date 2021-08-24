@@ -45,7 +45,7 @@ app.get(`${urlPrefix}/orders`, async (req, res) => {
 app.post(`${urlPrefix}/orders/add`, async (req, res) => {
   try {
     const order = {
-      id: v1(),
+      id: req.body.id || v1(),
       name: req.body.name,
       address: req.body.address,
       phone: req.body.phone,
@@ -53,9 +53,9 @@ app.post(`${urlPrefix}/orders/add`, async (req, res) => {
     };
     ordersDB.data.push(order);
     await ordersDB.write();
-    res.send(200, "Order created");
+    res.status(200).send("Order created");
   } catch (error) {
-    res.send(400, error);
+    res.status(400).send(error);
   }
 });
 
@@ -68,12 +68,12 @@ app.delete(`${urlPrefix}/orders/delete/:id`, async (req, res) => {
     if (orderIndex !== -1) {
       ordersDB.data.splice(orderIndex, 1);
       await ordersDB.write();
-      res.send(200, "Order deleted");
+      res.status(200).send("Order deleted");
     } else {
-      res.send(404, "Order not found");
+      res.status(404).send("Order not found");
     }
   } catch (error) {
-    res.send(400, error);
+    res.status(400).send(error);
   }
 });
 
@@ -86,3 +86,5 @@ app.listen(
       `Server running in ${process.env.NODE_ENV} mode on port ${PORT}`
     )
 );
+
+export default app;
