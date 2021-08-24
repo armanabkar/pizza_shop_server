@@ -33,13 +33,25 @@ app.get("/", (req, res) => {
   res.sendFile("index.html", { root: __dirname });
 });
 
-app.get(`${urlPrefix}/foods`, (req, res) => {
+app.get(`${urlPrefix}/foods`, async (req, res) => {
   res.send(foodsDB.data);
 });
 
-app.get(`${urlPrefix}/orders`, (req, res) => {
+app.get(`${urlPrefix}/orders`, async (req, res) => {
   res.send(ordersDB.data);
 });
+
+app.post(`${urlPrefix}/orders/add`, async (req, res) => {
+  const order = ordersDB.data.push(req.body);
+  try {
+    await ordersDB.write();
+    res.send(200, order);
+  } catch (error) {
+    res.send(400, error);
+  }
+});
+
+app.delete(`${urlPrefix}/orders/delete/:id`, async (req, res) => {});
 
 const PORT = process.env.PORT || 5000;
 
