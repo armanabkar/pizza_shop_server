@@ -1,1 +1,122 @@
-[{ "name": "food 1" }]
+[
+  {
+    "id": 1,
+    "name": "BBQ Chicken Pizza",
+    "type": "pizza",
+    "price": 14.99,
+    "description": "A topping of spicy barbecue sauce, diced chicken, cilantro, peppers, and onion all covered with cheese, and baked to bubbly goodness!",
+    "image": "images/bbq_chicken.jpg"
+  },
+  {
+    "id": 2,
+    "name": "Margherita Pizza",
+    "type": "pizza",
+    "price": 12.99,
+    "description": "Pizza Margherita is a typical Neapolitan pizza, made with San Marzano tomatoes, mozzarella cheese, fresh basil, salt, and extra-virgin olive oil.",
+    "image": "images/margherita.jpg"
+  },
+  {
+    "id": 3,
+    "name": "Meat Lover's Pizza",
+    "type": "pizza",
+    "price": 14.99,
+    "description": "Homemade thin crust pizza, topped off with two types of cheese, bacon, ham, pepperoni and hot sausage! A must make for meat lover’s.",
+    "image": "images/meat_lovers.jpg"
+  },
+  {
+    "id": 4,
+    "name": "Pepperoni Pizza",
+    "type": "pizza",
+    "price": 14.99,
+    "description": "Pepperoni is an American variety of salami, made from cured pork and beef seasoned with paprika or other chili pepper. Pepperoni is characteristically soft, slightly smoky, and bright red in color.",
+    "image": "images/pepperoni.jpg"
+  },
+  {
+    "id": 5,
+    "name": "Vegetable Pizza",
+    "type": "pizza",
+    "price": 12.99,
+    "description": "This vegetarian pizza recipe will delight vegetarians and carnivores alike. It's fresh and full of flavor, featuring cherry tomatoes, artichoke, bell pepper, olives, red onion and some hidden baby spinach.",
+    "image": "images/vegetable.jpg"
+  },
+  {
+    "id": 6,
+    "name": "Hawaiian Pizza",
+    "type": "pizza",
+    "price": 15.99,
+    "description": "Hawaiian pizza is a type of pizza originating in Canada, best known for having pineapple and either ham or bacon as toppings.Hawaiian pizza is commonly considered controversial, provoking passionate and polarizing debate, mainly focused on the inclusion of pineapple.",
+    "image": "images/hawaiian.jpg"
+  },
+  {
+    "id": 7,
+    "name": "Bacon Pizza",
+    "type": "pizza",
+    "price": 14.99,
+    "description": "Bacon pizza is a type of pizza originating in Canada, best known for having pineapple and either ham or bacon as toppings.Bacon pizza is commonly considered controversial, provoking passionate and polarizing debate, mainly focused on the inclusion of pineapple.",
+    "image": "images/bacon.jpg"
+  },
+  {
+    "id": 8,
+    "name": "Caesar Salad",
+    "type": "salad",
+    "price": 9.99,
+    "description": "A Caesar salad is a green salad of romaine lettuce and croutons dressed with lemon juice, olive oil, egg, Worcestershire sauce, anchovies, garlic, Dijon mustard, Parmesan cheese, and black pepper. In its original form, this salad was prepared and served tableside.",
+    "image": "images/caesar.jpg"
+  },
+  {
+    "id": 9,
+    "name": "Greek Salad",
+    "type": "salad",
+    "price": 8.99,
+    "description": "Greek salad or horiatiki salad is a popular salad in Greek cuisine generally made with pieces of tomatoes, cucumbers, onion, feta cheese, and olives and dressed with salt, pepper, Greek oregano, and olive oil. Common additions include green bell pepper slices or caper berries.",
+    "image": "images/greek.jpg"
+  },
+  {
+    "id": 10,
+    "name": "Caprese Salad",
+    "type": "salad",
+    "price": 9.99,
+    "description": "Caprese salad is a simple Italian salad, made of sliced fresh mozzarella, tomatoes, and sweet basil, seasoned with salt, and olive oil. It is usually arranged on a plate in restaurant practice. Like pizza Margherita, it features the colours of the Italian flag: green, white, and red.",
+    "image": "images/caprese.jpg"
+  },
+  {
+    "id": 11,
+    "name": "Cheesecake",
+    "type": "dessert",
+    "price": 4.99,
+    "description": "Cheesecake is a sweet dessert consisting of one or more layers. The main, and thickest, layer consists of a mixture of a soft, fresh cheese, eggs, and sugar. If there is a bottom layer, it most often consists of a crust or base made from crushed cookies, graham crackers, pastry, or sometimes sponge cake.",
+    "image": "images/cheesecake.jpg"
+  },
+  {
+    "id": 12,
+    "name": "Ice Cream",
+    "type": "dessert",
+    "price": 3.99,
+    "description": "Ice cream is a sweetened frozen food typically eaten as a snack or dessert. It may be made from dairy milk or cream and is flavoured with a sweetener, either sugar or an alternative, and a spice, such as cocoa or vanilla, or with fruit such as strawberries or peaches.",
+    "image": "images/ice_cream.jpg"
+  },
+  {
+    "id": 13,
+    "name": "Apple Pie",
+    "type": "dessert",
+    "price": 4.99,
+    "description": "An apple pie is a pie in which the principal filling ingredient is apple, originated in England. It is often served with whipped cream, ice cream, or cheddar cheese. It is generally double-crusted, with pastry both above and below the filling; the upper crust may be solid or latticed.",
+    "image": "images/apple_pie.jpg"
+  },
+  {
+    "id": 14,
+    "name": "Beer",
+    "type": "beverage",
+    "price": 1.99,
+    "description": "Beer is one of the oldest and most widely consumed alcoholic drinks in the world, and the third most popular drink overall after water and tea.",
+    "image": "images/heineken.jpg"
+  },
+  {
+    "id": 15,
+    "name": "Cola",
+    "type": "beverage",
+    "price": 1.79,
+    "description": "Cola is a carbonated soft drink flavored with vanilla, cinnamon, citrus oils and other flavorings. Cola became popular worldwide after pharmacist John Pemberton invented Coca-Cola, a trademarked brand, in 1886—which was later imitated by other manufacturers.",
+    "image": "images/coca_cola.jpg"
+  }
+]
