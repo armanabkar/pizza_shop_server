@@ -5,6 +5,7 @@ import path from "path";
 import cors from "cors";
 import { fileURLToPath } from "url";
 import { Low, JSONFile } from "lowdb";
+import { v1 } from "uuid";
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
@@ -42,16 +43,39 @@ app.get(`${urlPrefix}/orders`, async (req, res) => {
 });
 
 app.post(`${urlPrefix}/orders/add`, async (req, res) => {
-  const order = ordersDB.data.push(req.body);
   try {
+    const order = {
+      id: v1(),
+      name: req.body.name,
+      address: req.body.address,
+      phone: req.body.phone,
+      items: req.body.items,
+    };
+    ordersDB.data.push(order);
     await ordersDB.write();
-    res.send(200, order);
+    res.send(200, "Order created");
   } catch (error) {
     res.send(400, error);
   }
 });
 
-app.delete(`${urlPrefix}/orders/delete/:id`, async (req, res) => {});
+app.delete(`${urlPrefix}/orders/delete/:id`, async (req, res) => {
+  try {
+    const orderIndex = ordersDB.data.indexOf(
+      ordersDB.data.find((order) => order.id == req.params.id)
+    );
+
+    if (orderIndex !== -1) {
+      ordersDB.data.splice(orderIndex, 1);
+      await ordersDB.write();
+      res.send(200, "Order deleted");
+    } else {
+      res.send(404, "Order not found");
+    }
+  } catch (error) {
+    res.send(400, error);
+  }
+});
 
 const PORT = process.env.PORT || 5000;
 
