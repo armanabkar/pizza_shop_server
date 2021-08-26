@@ -5,6 +5,16 @@ import app from "../index.js";
 chai.use(chaiHttp);
 chai.should();
 
+it("should return a html", () => {
+  chai
+    .request(app)
+    .get("/")
+    .end((err, res) => {
+      res.should.have.status(200);
+      res.headers["content-type"].should.have.string("text/html");
+    });
+});
+
 describe("Test foods methods", () => {
   it("should get all foods", (done) => {
     chai
