@@ -4,9 +4,7 @@
     "name": "Arman Abkar",
     "address": "246 E Colden Ave, Los Angeles, California(CA), 90003",
     "phone": "09363868196",
-    "items": [
-      "BBQ Chicken Pizza",
-      "Cola"
-    ]
+    "items": ["BBQ Chicken Pizza", "Cola"],
+    "totalPrice": 16.78
   }
 ]

@@ -51,6 +51,7 @@ describe("Test orders methods", () => {
         address: "example address",
         phone: "123456789",
         items: ["example"],
+        totalPrice: 16.78,
       })
       .end((err, res) => {
         res.should.have.status(200);
