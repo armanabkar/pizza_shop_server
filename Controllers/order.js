@@ -1,5 +1,5 @@
 import { v1 } from "uuid";
-import { ordersDB } from "../data/database.js";
+import { ordersDB } from "../utils/database.js";
 
 await ordersDB.read();
 

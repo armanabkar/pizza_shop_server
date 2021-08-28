@@ -1,4 +1,4 @@
-import { foodsDB } from "../data/database.js";
+import { foodsDB } from "../utils/database.js";
 
 await foodsDB.read();
 

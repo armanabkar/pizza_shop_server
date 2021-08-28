@@ -19,14 +19,14 @@
     />
   </head>
   <body class="bg-dark text-white">
+    <nav
+      class="navbar navbar-expand-lg navbar-light bg-light w-100 border-bottom"
+    >
+      <div class="container-fluid">
+        <span class="navbar-brand"><strong>Pizza Shop Server</strong></span>
+      </div>
+    </nav>
     <div id="app">
-      <nav
-        class="navbar navbar-expand-lg navbar-dark bg-dark w-100 border-bottom"
-      >
-        <div class="container-fluid">
-          <span class="navbar-brand">Pizza Shop API</span>
-        </div>
-      </nav>
       <p class="text-center" style="margin: 1em 0.5em">
         This is a REST API for the pizza ordering application. Built with
         Node.js and Express.
@@ -34,26 +34,46 @@
       <table class="table table-striped table-dark">
         <thead>
           <tr>
+            <th scope="col" class="hidden">Method</th>
             <th scope="col">Endpoint</th>
             <th scope="col">Description</th>
           </tr>
         </thead>
         <tbody>
           <tr>
+            <td class="hidden">GET</td>
             <td>/api/v1/foods</td>
             <td>Get all foods</td>
           </tr>
           <tr>
+            <td class="hidden">GET</td>
             <td>/api/v1/orders</td>
             <td>Get all orders</td>
           </tr>
           <tr>
+            <td class="hidden">POST</td>
             <td>/api/v1/orders/add</td>
             <td>Add a new order</td>
           </tr>
           <tr>
+            <td class="hidden">DELETE</td>
             <td>/api/v1/orders/delete/:id</td>
-            <td>Delete an order by id</td>
+            <td>Delete order by id</td>
+          </tr>
+          <tr>
+            <td class="hidden">GET</td>
+            <td>/api/v1/users</td>
+            <td>Login</td>
+          </tr>
+          <tr>
+            <td class="hidden">POST</td>
+            <td>/api/v1/users/register</td>
+            <td>Register</td>
+          </tr>
+          <tr>
+            <td class="hidden">DELETE</td>
+            <td>/api/v1/users/delete/:phone</td>
+            <td>Delete user by phone number</td>
           </tr>
         </tbody>
       </table>
@@ -104,7 +124,7 @@
       el: "#app",
       data: { orders: [] },
       created: function () {
-        fetch("http://localhost:5000/api/v1/orders")
+        fetch("https://pizzashop-server.herokuapp.com/api/v1/orders")
           .then((response) => response.json())
           .then((data) => (this.orders = data));
       },
@@ -112,13 +132,15 @@
         deleteOrder: function (index) {
           let id = this.orders[index].id;
           if (confirm("Are you sure you want to delete this order?")) {
-            fetch("http://localhost:5000/api/v1/orders/delete/" + id, {
-              method: "DELETE",
-            }).then(this.orders.splice(index, 1));
+            fetch(
+              "https://pizzashop-server.herokuapp.com/api/v1/orders/delete/" +
+                id,
+              { method: "DELETE" }
+            ).then(this.orders.splice(index, 1));
           }
         },
         refetchOrders: function () {
-          fetch("http://localhost:5000/api/v1/orders")
+          fetch("https://pizzashop-server.herokuapp.com/api/v1/orders")
             .then((response) => response.json())
             .then((data) => (this.orders = data));
         },
@@ -126,6 +148,9 @@
     });
   </script>
   <style>
+    .container-fluid {
+      justify-content: center !important;
+    }
     h2 {
       margin: 0.5em;
       display: flex;
@@ -138,6 +163,11 @@
     .refetch {
       font-size: 1rem;
       padding: 0.2em;
+    }
+    @media only screen and (max-width: 600px) {
+      .hidden {
+        display: none;
+      }
     }
   </style>
 </html>
