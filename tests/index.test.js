@@ -79,12 +79,12 @@ describe("Test orders methods", () => {
       .get("/api/v1/orders")
       .end((err, res) => {
         res.should.have.status(200);
-        res.body[1].id.should.be.equal("1");
-        res.body[1].name.should.be.equal("example name");
-        res.body[1].address.should.be.equal("example address");
-        res.body[1].phone.should.be.equal("123456789");
-        res.body[1].items[0].should.be.equal("example");
-        res.body[1].totalPrice.should.be.equal(16.78);
+        res.body[2].id.should.be.equal("1");
+        res.body[2].name.should.be.equal("example name");
+        res.body[2].address.should.be.equal("example address");
+        res.body[2].phone.should.be.equal("123456789");
+        res.body[2].items[0].should.be.equal("example");
+        res.body[2].totalPrice.should.be.equal(16.78);
         done();
       });
   });

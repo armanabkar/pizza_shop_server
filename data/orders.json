@@ -9,5 +9,17 @@
       "Cola"
     ],
     "totalPrice": 16.78
+  },
+  {
+    "id": "c20413e0-07cd-11ec-8730-a38b6cf68acf",
+    "name": "John Doe",
+    "address": "1503 Vail St, Sealy, TX, 77474",
+    "phone": "09131110000",
+    "items": [
+      "Hawaiian Pizza",
+      "Caesar Salad",
+      "Beer"
+    ],
+    "totalPrice": 27.97
   }
 ]
