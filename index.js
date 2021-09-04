@@ -7,6 +7,11 @@ import { fileURLToPath } from "url";
 import { getAllFoods } from "./Controllers/food.js";
 import { addNewOrder, deleteOrder, getAllOrders } from "./Controllers/order.js";
 import { authUser, deleteUser, registerUser } from "./Controllers/user.js";
+import {
+  addNewReservation,
+  deleteReservation,
+  getAllReservations,
+} from "./Controllers/reservations.js";
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
@@ -22,15 +27,19 @@ if (process.env.NODE_ENV === "development") {
 
 const urlPrefix = "/api/v1";
 
-app.use("/images", express.static(__dirname + "/images"));
-
 app.get("/", (req, res) => res.sendFile("index.html", { root: __dirname }));
+
+app.use("/images", express.static(__dirname + "/images"));
 
 app.get(`${urlPrefix}/foods`, getAllFoods);
 
 app.get(`${urlPrefix}/orders`, getAllOrders);
 app.post(`${urlPrefix}/orders/add`, addNewOrder);
 app.delete(`${urlPrefix}/orders/delete/:id`, deleteOrder);
+
+app.get(`${urlPrefix}/reservations`, getAllReservations);
+app.post(`${urlPrefix}/reservations/add`, addNewReservation);
+app.delete(`${urlPrefix}/reservations/delete/:id`, deleteReservation);
 
 app.get(`${urlPrefix}/users`, authUser);
 app.post(`${urlPrefix}/users/register`, registerUser);
