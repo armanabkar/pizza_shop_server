@@ -1,16 +1,16 @@
 import express from "express";
-import { getAllFoods } from "../controllers/food.js";
+import { getAllFoods } from "../Controllers/food.js";
 import {
   addNewOrder,
   deleteOrder,
   getAllOrders,
-} from "../controllers/order.js";
-import { authUser, deleteUser, registerUser } from "../controllers/user.js";
+} from "../Controllers/order.js";
+import { authUser, deleteUser, registerUser } from "../Controllers/user.js";
 import {
   addNewReservation,
   deleteReservation,
   getAllReservations,
-} from "../controllers/reservations.js";
+} from "../Controllers/reservations.js";
 
 const router = express.Router();
 const urlPrefix = "/api/v1";
