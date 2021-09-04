@@ -121,16 +121,60 @@
           <small class="text-warning">{{order.phone}}</small><br />
         </span>
       </div>
+      <h2>
+        <span>Reservations:</span>
+        <button
+          type="button"
+          class="btn btn-info refetch"
+          v-on:click="refetchReservations"
+        >
+          Refresh
+        </button>
+      </h2>
+      <div
+        class="list-group"
+        v-for="(reservation, index) in reservations"
+        :key="reservation.id"
+      >
+        <span
+          class="
+            list-group-item list-group-item-action
+            order
+            flex-column
+            align-items-start
+            bg-dark
+            text-white
+          "
+          ><div class="d-flex w-100 justify-content-between">
+            <h5 class="mb-1">{{reservation.name}}</h5>
+            <div>
+              <small class="text-white">{{reservation.phone}}</small> |
+              <button
+                type="button"
+                class="btn btn-danger"
+                v-on:click="deleteReservation(index)"
+              >
+                Delete Reservation
+              </button>
+            </div>
+          </div>
+          <small class="text-info">{{reservation.tableSize}} Table</small
+          ><small class="text-info"> - for {{reservation.time}}</small><br />
+        </span>
+      </div>
     </div>
   </body>
   <script>
     var app = new Vue({
       el: "#app",
-      data: { orders: [] },
+      data: { orders: [], reservations: [] },
       created: function () {
         fetch("https://pizzashop-server.herokuapp.com/api/v1/orders")
           .then((response) => response.json())
           .then((data) => (this.orders = data));
+        fetch("https://pizzashop-server.herokuapp.com/api/v1/reservations")
+          .then((response) => response.json())
+          .then((data) => (this.reservations = data));
       },
       methods: {
         deleteOrder: function (index) {
@@ -143,10 +187,27 @@
             ).then(this.orders.splice(index, 1));
           }
         },
+        deleteReservation: function (index) {
+          let id = this.reservations[index].id;
+          if (confirm("Are you sure you want to delete this reservation?")) {
+            fetch(
+              "https://pizzashop-server.herokuapp.com/api/v1/reservations/delete/" +
+                id,
+              {
+                method: "DELETE",
+              }
+            ).then(this.reservations.splice(index, 1));
+          }
+        },
         refetchOrders: function () {
           fetch("https://pizzashop-server.herokuapp.com/api/v1/orders")
             .then((response) => response.json())
             .then((data) => (this.orders = data));
+        },
+        refetchReservations: function () {
+          fetch("https://pizzashop-server.herokuapp.com/api/v1/reservations")
+            .then((response) => response.json())
+            .then((data) => (this.reservations = data));
         },
       },
     });

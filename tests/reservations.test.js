@@ -26,7 +26,7 @@ describe("Test reservations methods", () => {
         name: "example name",
         phone: "123456789",
         tableSize: "Medium",
-        time: "1631304000000",
+        time: "Monday 17 Sep 2021",
       })
       .end((err, res) => {
         res.should.have.status(200);
@@ -45,7 +45,7 @@ describe("Test reservations methods", () => {
         res.body[1].name.should.be.equal("example name");
         res.body[1].phone.should.be.equal("123456789");
         res.body[1].tableSize.should.be.equal("Medium");
-        res.body[1].time.should.be.equal("1631304000000");
+        res.body[1].time.should.be.equal("Monday 17 Sep 2021");
         done();
       });
   });
