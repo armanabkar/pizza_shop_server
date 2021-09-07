@@ -42,12 +42,13 @@ describe("Test orders methods", () => {
       .get("/api/v1/orders")
       .end((err, res) => {
         res.should.have.status(200);
-        res.body[2].id.should.be.equal("1");
-        res.body[2].name.should.be.equal("example name");
-        res.body[2].address.should.be.equal("example address");
-        res.body[2].phone.should.be.equal("123456789");
-        res.body[2].items[0].should.be.equal("example");
-        res.body[2].totalPrice.should.be.equal(16.78);
+        const lastItemIndex = res.body.length - 1;
+        res.body[lastItemIndex].id.should.be.equal("1");
+        res.body[lastItemIndex].name.should.be.equal("example name");
+        res.body[lastItemIndex].address.should.be.equal("example address");
+        res.body[lastItemIndex].phone.should.be.equal("123456789");
+        res.body[lastItemIndex].items[0].should.be.equal("example");
+        res.body[lastItemIndex].totalPrice.should.be.equal(16.78);
         done();
       });
   });

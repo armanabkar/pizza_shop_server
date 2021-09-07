@@ -27,6 +27,7 @@ describe("Test reservations methods", () => {
         phone: "123456789",
         tableSize: "Medium",
         time: "Monday 17 Sep 2021",
+        request: "Example request",
       })
       .end((err, res) => {
         res.should.have.status(200);
@@ -41,11 +42,13 @@ describe("Test reservations methods", () => {
       .get("/api/v1/reservations")
       .end((err, res) => {
         res.should.have.status(200);
-        res.body[1].id.should.be.equal("1");
-        res.body[1].name.should.be.equal("example name");
-        res.body[1].phone.should.be.equal("123456789");
-        res.body[1].tableSize.should.be.equal("Medium");
-        res.body[1].time.should.be.equal("Monday 17 Sep 2021");
+        const lastItemIndex = res.body.length - 1;
+        res.body[lastItemIndex].id.should.be.equal("1");
+        res.body[lastItemIndex].name.should.be.equal("example name");
+        res.body[lastItemIndex].phone.should.be.equal("123456789");
+        res.body[lastItemIndex].tableSize.should.be.equal("Medium");
+        res.body[lastItemIndex].time.should.be.equal("Monday 17 Sep 2021");
+        res.body[lastItemIndex].request.should.be.equal("Example request");
         done();
       });
   });

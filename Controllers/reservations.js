@@ -15,6 +15,7 @@ export async function addNewReservation(req, res) {
       phone: req.body.phone,
       tableSize: req.body.tableSize,
       time: req.body.time,
+      request: req.body.request,
     };
     reservationsDB.data.push(reservation);
     await reservationsDB.write();
