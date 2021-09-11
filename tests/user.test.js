@@ -22,7 +22,7 @@ describe("Test users methods", () => {
   it("should return user not found", (done) => {
     chai
       .request(app)
-      .get("/api/v1/users/login")
+      .post("/api/v1/users/login")
       .send({
         phone: "123456789",
       })
@@ -36,7 +36,7 @@ describe("Test users methods", () => {
   it("should return user info", (done) => {
     chai
       .request(app)
-      .get("/api/v1/users/login")
+      .post("/api/v1/users/login")
       .send({
         phone: "09363860000",
       })

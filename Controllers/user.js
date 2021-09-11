@@ -8,7 +8,7 @@ export async function getAllUsers(req, res) {
   res.send(usersDB.data);
 }
 
-export async function authUser(req, res) {
+export async function loginUser(req, res) {
   const { phone } = req.body;
 
   const user = usersDB.data.find((user) => user.phone === phone);
