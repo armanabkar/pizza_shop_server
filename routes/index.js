@@ -5,7 +5,12 @@ import {
   deleteOrder,
   getAllOrders,
 } from "../Controllers/order.js";
-import { authUser, deleteUser, registerUser } from "../Controllers/user.js";
+import {
+  authUser,
+  deleteUser,
+  getAllUsers,
+  registerUser,
+} from "../Controllers/user.js";
 import {
   addNewReservation,
   deleteReservation,
@@ -25,7 +30,8 @@ router.get(`${urlPrefix}/reservations`, getAllReservations);
 router.post(`${urlPrefix}/reservations/add`, addNewReservation);
 router.delete(`${urlPrefix}/reservations/delete/:id`, deleteReservation);
 
-router.get(`${urlPrefix}/users`, authUser);
+router.get(`${urlPrefix}/users`, getAllUsers);
+router.get(`${urlPrefix}/users/login`, authUser);
 router.post(`${urlPrefix}/users/register`, registerUser);
 router.delete(`${urlPrefix}/users/delete/:phone`, deleteUser);
 

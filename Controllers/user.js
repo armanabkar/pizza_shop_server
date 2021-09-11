@@ -4,6 +4,10 @@ import generateToken from "../utils/generateToken.js";
 
 await usersDB.read();
 
+export async function getAllUsers(req, res) {
+  res.send(usersDB.data);
+}
+
 export async function authUser(req, res) {
   const { phone } = req.body;
 

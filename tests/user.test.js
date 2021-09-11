@@ -6,10 +6,23 @@ chai.use(chaiHttp);
 chai.should();
 
 describe("Test users methods", () => {
-  it("should return user not found", (done) => {
+  it("should get all users", (done) => {
     chai
       .request(app)
       .get("/api/v1/users")
+      .end((err, res) => {
+        res.should.have.status(200);
+        res.body.should.be.a("Array");
+        res.body.should.have.lengthOf(2);
+        res.body[0].name.should.be.equal("Arman Abkar");
+        done();
+      });
+  });
+
+  it("should return user not found", (done) => {
+    chai
+      .request(app)
+      .get("/api/v1/users/login")
       .send({
         phone: "123456789",
       })
@@ -23,7 +36,7 @@ describe("Test users methods", () => {
   it("should return user info", (done) => {
     chai
       .request(app)
-      .get("/api/v1/users")
+      .get("/api/v1/users/login")
       .send({
         phone: "09363860000",
       })

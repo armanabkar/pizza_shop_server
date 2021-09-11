@@ -35,10 +35,15 @@
           .json file, so new data won't persist.*</span
         >
         <br />
-        <a href="https://github.com/armanabkar/pizza_shop_server"
+        <a
+          href="https://github.com/armanabkar/pizza_shop_server"
+          class="text-info"
           >Source Code</a
         >
-        | <a href="https://github.com/armanabkar/PizzaShop">iOS application</a>
+        |
+        <a href="https://github.com/armanabkar/PizzaShop" class="text-info"
+          >iOS application</a
+        >
       </p>
       <table class="table table-striped table-dark">
         <thead>
@@ -87,6 +92,11 @@
           <tr>
             <td class="hidden">GET</td>
             <td>/api/v1/users</td>
+            <td>Get all users</td>
+          </tr>
+          <tr>
+            <td class="hidden">GET</td>
+            <td>/api/v1/users/login</td>
             <td>Login</td>
           </tr>
           <tr>
@@ -201,12 +211,57 @@
           <small class="text-secondary">{{reservation.request}}</small>
         </span>
       </div>
+      <h3>
+        <span>Users:</span>
+        <div>
+          <button
+            type="button"
+            class="btn btn-outline-warning refetch"
+            v-on:click="newUser"
+          >
+            New User
+          </button>
+          <button
+            type="button"
+            class="btn btn-info refetch"
+            v-on:click="refetchUsers"
+          >
+            Refresh
+          </button>
+        </div>
+      </h3>
+      <div class="list-group" v-for="(user, index) in users" :key="user.id">
+        <span
+          class="
+            list-group-item list-group-item-action
+            order
+            flex-column
+            align-items-start
+            bg-dark
+            text-white
+          "
+          ><div class="d-flex w-100 justify-content-between">
+            <h5 class="mb-1">{{user.name}}</h5>
+            <div>
+              <small class="text-white">{{user.phone}}</small> |
+              <button
+                type="button"
+                class="btn btn-danger"
+                v-on:click="deleteUser(index)"
+              >
+                Delete User
+              </button>
+            </div>
+          </div>
+          <p style="margin: 0" class="text-warning">{{user.address}}</p>
+        </span>
+      </div>
     </div>
   </body>
   <script>
     var app = new Vue({
       el: "#app",
-      data: { orders: [], reservations: [] },
+      data: { orders: [], reservations: [], users: [] },
       created: function () {
         fetch("https://pizzashop-server.herokuapp.com/api/v1/orders")
           .then((response) => response.json())
@@ -214,6 +269,9 @@
         fetch("https://pizzashop-server.herokuapp.com/api/v1/reservations")
           .then((response) => response.json())
           .then((data) => (this.reservations = data));
+        fetch("https://pizzashop-server.herokuapp.com/api/v1/users")
+          .then((response) => response.json())
+          .then((data) => (this.users = data));
       },
       methods: {
         deleteOrder: function (index) {
@@ -238,6 +296,18 @@
             ).then(this.reservations.splice(index, 1));
           }
         },
+        deleteUser: function (index) {
+          let id = this.users[index].phone;
+          if (confirm("Are you sure you want to delete this user?")) {
+            fetch(
+              "https://pizzashop-server.herokuapp.com/api/v1/users/delete/" +
+                id,
+              {
+                method: "DELETE",
+              }
+            ).then(this.users.splice(index, 1));
+          }
+        },
         refetchOrders: function () {
           fetch("https://pizzashop-server.herokuapp.com/api/v1/orders")
             .then((response) => response.json())
@@ -248,8 +318,14 @@
             .then((response) => response.json())
             .then((data) => (this.reservations = data));
         },
+        refetchUsers: function () {
+          fetch("https://pizzashop-server.herokuapp.com/api/v1/users")
+            .then((response) => response.json())
+            .then((data) => (this.users = data));
+        },
         newOrder: function () {},
         newReservation: function () {},
+        newUser: function () {},
       },
     });
   </script>
