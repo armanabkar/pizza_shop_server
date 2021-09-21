@@ -18,7 +18,10 @@ if (process.env.NODE_ENV === "development") {
   app.use(morgan("dev"));
 }
 
-app.get("/", (req, res) => res.sendFile("index.html", { root: __dirname }));
+app.use(express.static("dist"));
+app.get("/", (req, res) =>
+  res.sendFile("dist/index.html", { root: __dirname })
+);
 app.use("/images", express.static(__dirname + "/images"));
 
 app.use(router);
