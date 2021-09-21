@@ -24,7 +24,7 @@
     <h3>
       <span class="text-white">API Endpoints:</span>
     </h3>
-    <table class="table table-striped table-dark">
+    <table class="table">
       <thead>
         <tr>
           <th scope="col" class="hidden">Method</th>
@@ -343,6 +343,11 @@ h3 {
 .order {
   margin-bottom: 0.5em;
   background-color: #2c3034 !important;
+}
+.table,
+.list-group-item {
+  background-color: rgba(0, 0, 0, 0.75) !important;
+  color: white;
 }
 @media only screen and (max-width: 600px) {
   .admin {
