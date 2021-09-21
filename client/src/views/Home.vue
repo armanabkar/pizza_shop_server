@@ -48,9 +48,6 @@ export default {
 .card-title {
   font-weight: bold;
   letter-spacing: 0.05em;
-  color: black;
-  background-color: rgba(255, 255, 255, 0.75);
-  border-radius: 5px;
   padding: 0.25em 0;
 }
 .btn {

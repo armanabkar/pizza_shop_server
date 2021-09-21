@@ -9,12 +9,11 @@ JWT_SECRET = secret
 PORT = 5000
 ```
 ```
-npm run dev
+npm run dev:server
 ```
 
 ## Client
 
 ```
-cd client
-npm run serve
+npm run dev:client
 ```

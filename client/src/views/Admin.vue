@@ -1,6 +1,6 @@
 <template>
-  <div class="admin bg-dark">
-    <p class="text-center" style="margin: 0 0.5em; padding: 1em 0">
+  <div class="admin">
+    <p class="text-center description" style="margin: 0 0.5em; padding: 1em 0">
       <span class="text-white">
         The REST API for the pizza ordering application. Built with Node.js and
         Express.</span
@@ -21,6 +21,9 @@
         >iOS application</a
       >
     </p>
+    <h3>
+      <span class="text-white">API Endpoints:</span>
+    </h3>
     <table class="table table-striped table-dark">
       <thead>
         <tr>
@@ -315,10 +318,12 @@ export default {
 <style scoped>
 .admin {
   text-align: left;
-  padding-bottom: 2em;
+  padding: 0 1.5em 2em 1.5em;
   font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue",
     Arial, "Noto Sans", "Liberation Sans", sans-serif, "Apple Color Emoji",
     "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  background-color: rgba(0, 0, 0, 0.75) !important;
+  border-top: 2px solid white;
 }
 .container-fluid {
   justify-content: center !important;
@@ -340,6 +345,9 @@ h3 {
   background-color: #2c3034 !important;
 }
 @media only screen and (max-width: 600px) {
+  .admin {
+    padding: 0 0 2em 0;
+  }
   .hidden {
     display: none;
   }
