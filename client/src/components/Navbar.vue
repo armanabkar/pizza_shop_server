@@ -1,39 +1,39 @@
 <template>
-  <nav id="nav" class="navbar navbar-expand-lg navbar-dark bg-dark w-100">
-    <div>
-      <router-link to="/">Pizza Pizza</router-link>
-      <router-link to="/menu">Menu</router-link>
-      <router-link to="/about">About</router-link>
-    </div>
-    <div>
-      <router-link to="/admin">Admin Panel</router-link>
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <div class="container-fluid">
+      <router-link class="navbar-brand" to="/">Pizza Pizza</router-link>
+      <button
+        class="navbar-toggler"
+        type="button"
+        data-bs-toggle="collapse"
+        data-bs-target="#navbarNavAltMarkup"
+        aria-controls="navbarNavAltMarkup"
+        aria-expanded="false"
+        aria-label="Toggle navigation"
+      >
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+        <div class="navbar-nav">
+          <router-link class="nav-link" to="/menu" active-class="active"
+            >Menu</router-link
+          >
+          <router-link class="nav-link" active-class="active" to="/about"
+            >About</router-link
+          >
+          <router-link class="nav-link" active-class="active" to="/admin"
+            >Admin Panel</router-link
+          >
+        </div>
+      </div>
     </div>
   </nav>
 </template>
 
 <style>
-#nav {
+.navbar {
   background-color: rgba(0, 0, 0, 0.75) !important;
-  display: flex;
-  justify-content: space-between;
-  padding: 0.75em 0;
-}
-
-#nav a {
-  font-weight: bold;
-  color: #555555;
-  padding: 0.45em;
-  text-decoration: none;
-  font-size: 1.1em;
-}
-
-#nav a.router-link-exact-active {
-  color: #ffffff;
-}
-
-@media only screen and (max-width: 600px) {
-  nav {
-    font-size: 1em;
-  }
+  padding-left: 1em !important;
+  padding-right: 1em !important;
 }
 </style>

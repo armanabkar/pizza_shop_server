@@ -20,7 +20,7 @@
       </div>
       <div class="card-body links" style="padding-top: 0">
         <router-link to="/menu">
-          <a href="#" class="btn btn-outline-warning">Menu</a>
+          <a href="#" class="btn btn-outline-light">Menu</a>
         </router-link>
         <router-link to="/about">
           <a href="#" class="btn btn-outline-light">More About Us</a>

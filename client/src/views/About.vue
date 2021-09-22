@@ -20,13 +20,13 @@
     <p>(805) 964-5065</p>
     <p>4668 Vintage Ranch Ln, Santa Barbara, California(CA), 93110</p>
     <img src="../assets/location.png" alt="Pizza Pizza" class="map" />
-    <a href="https://github.com/armanabkar/pizzashop">
+    <a href="https://github.com/armanabkar/pizzashop" class="store">
       <img
         src="https://upload.wikimedia.org/wikipedia/commons/3/3c/Download_on_the_App_Store_Badge.svg"
         alt="PizzaShop"
       />
     </a>
-    <a href="https://github.com/armanabkar/pizzashop">
+    <a href="https://github.com/armanabkar/pizzashop" class="store">
       <img
         src="https://upload.wikimedia.org/wikipedia/commons/7/78/Google_Play_Store_badge_EN.svg"
         alt="PizzaShop"
