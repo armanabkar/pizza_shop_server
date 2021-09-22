@@ -18,6 +18,9 @@
           <router-link class="nav-link" to="/menu" active-class="active"
             >Menu</router-link
           >
+          <router-link class="nav-link" to="/reservation" active-class="active"
+            >Reservation</router-link
+          >
           <router-link class="nav-link" active-class="active" to="/about"
             >About</router-link
           >
@@ -33,7 +36,11 @@
 <style>
 .navbar {
   background-color: rgba(0, 0, 0, 0.75) !important;
-  padding-left: 1em !important;
-  padding-right: 1em !important;
+  padding-left: 0.7em !important;
+  padding-right: 0.7em !important;
+}
+.nav-link,
+.navbar-brand {
+  font-weight: 600;
 }
 </style>

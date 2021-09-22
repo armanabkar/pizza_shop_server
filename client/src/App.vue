@@ -26,4 +26,13 @@ body {
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
 }
+::-webkit-scrollbar {
+  width: 12px;
+}
+::-webkit-scrollbar-track {
+  background: #ffffff;
+}
+::-webkit-scrollbar-thumb {
+  background: #111
+}
 </style>

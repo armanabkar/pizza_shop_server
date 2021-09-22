@@ -1,14 +1,15 @@
 {
   "name": "pizza_shop_server",
   "version": "3.1.0",
-  "description": "This is a REST API for the pizza ordering application. Built with Node.js and Express.",
+  "description": "This is a REST API and a website for the pizza ordering application. Built with Node.js and Express.",
   "main": "index.js",
   "scripts": {
     "start": "node index.js",
     "dev:server": "nodemon index.js",
     "dev:client": "cd client && npm run serve",
     "build:client": "cd client && npm run build",
-    "test": "mocha tests/*.js --exit"
+    "test": "mocha tests/*.js --exit",
+    "test:client": "cd client && npm run test"
   },
   "author": "Arman Abkar",
   "license": "ISC",

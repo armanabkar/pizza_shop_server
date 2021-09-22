@@ -22,6 +22,11 @@ const routes = [
     name: "Admin",
     component: () => import("../views/Admin.vue"),
   },
+  {
+    path: "/reservation",
+    name: "Reservation",
+    component: () => import("../views/Reservation.vue"),
+  },
 ];
 
 const router = createRouter({

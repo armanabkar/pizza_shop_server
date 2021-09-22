@@ -93,7 +93,7 @@ h3 {
 }
 @media only screen and (max-width: 600px) {
   .foods-container {
-    width: 95%;
+    width: 90%;
   }
 }
 </style>

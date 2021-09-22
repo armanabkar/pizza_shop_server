@@ -55,7 +55,8 @@ export default {
 }
 @media only screen and (max-width: 600px) {
   .card {
-    width: 80%;
+    margin-top: 1.5em;
+    width: 90%;
   }
 }
 </style>
