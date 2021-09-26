@@ -1,11 +1,7 @@
 <template>
   <div class="home">
     <div class="card text-white">
-      <img
-        class="card-img-top"
-        src="../assets/home-image.jpg"
-        alt="Card image cap"
-      />
+      <Carousel />
       <div class="card-body">
         <h5 class="card-title">Pizza Pizza</h5>
         <p class="card-text">
@@ -31,8 +27,12 @@
 </template>
 
 <script>
+import Carousel from "../components/Carousel.vue"
 export default {
   name: "Home",
+  components: {
+    Carousel,
+  },
 }
 </script>
 

@@ -1,5 +1,6 @@
 <template>
   <form class="form" @submit.prevent>
+    <h3>Reservation</h3 >
     <div class="mb-3">
       <label for="nameInput" class="form-label">What is your name?</label>
       <input class="form-control" id="nameInput" v-model="name" />
@@ -26,7 +27,7 @@
         >When do you want to come?</label
       >
       <input
-        placeholder="20:30pm Monday 17 Sep 2021"
+        placeholder="example: 20:30pm Monday 17 Sep 2021"
         class="form-control"
         id="timeInput"
         v-model="time"
@@ -93,7 +94,7 @@ export default {
 }
 </script>
 
-<style>
+<style scoped>
 .form {
   background-color: rgba(0, 0, 0, 0.75);
   color: white;

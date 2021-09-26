@@ -23,8 +23,8 @@ describe("Test Home View", () => {
   });
 
   it("renders image", () => {
-    const img = wrapper.findAll(".card-img-top");
-    expect(img.length).toBe(1);
+    const img = wrapper.findAll(".d-block");
+    expect(img.length).toBe(3);
   });
 
   it("renders two buttons", () => {
