@@ -19,6 +19,7 @@ export async function addNewReservation(req, res) {
     };
     reservationsDB.data.push(reservation);
     await reservationsDB.write();
+
     res.status(200).send("Reservation created");
   } catch (error) {
     res.status(400).send(error);
@@ -26,18 +27,19 @@ export async function addNewReservation(req, res) {
 }
 
 export async function deleteReservation(req, res) {
-  try {
-    const reservationIndex = reservationsDB.data.indexOf(
-      reservationsDB.data.find((reservation) => reservation.id == req.params.id)
-    );
+  const reservationIndex = reservationsDB.data.indexOf(
+    reservationsDB.data.find((reservation) => reservation.id == req.params.id)
+  );
+  if (reservationIndex === -1) {
+    res.status(404).send("Reservation not found");
+    return;
+  }
 
-    if (reservationIndex !== -1) {
-      reservationsDB.data.splice(reservationIndex, 1);
-      await reservationsDB.write();
-      res.status(200).send("Reservation deleted");
-    } else {
-      res.status(404).send("Reservation not found");
-    }
+  try {
+    reservationsDB.data.splice(reservationIndex, 1);
+    await reservationsDB.write();
+
+    res.status(200).send("Reservation deleted");
   } catch (error) {
     res.status(400).send(error);
   }

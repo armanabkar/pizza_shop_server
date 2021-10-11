@@ -19,6 +19,7 @@ export async function addNewOrder(req, res) {
     };
     ordersDB.data.push(order);
     await ordersDB.write();
+
     res.status(200).send("Order created");
   } catch (error) {
     res.status(400).send(error);
@@ -26,18 +27,19 @@ export async function addNewOrder(req, res) {
 }
 
 export async function deleteOrder(req, res) {
-  try {
-    const orderIndex = ordersDB.data.indexOf(
-      ordersDB.data.find((order) => order.id == req.params.id)
-    );
+  const orderIndex = ordersDB.data.indexOf(
+    ordersDB.data.find((order) => order.id == req.params.id)
+  );
+  if (orderIndex === -1) {
+    res.status(404).send("Order not found");
+    return;
+  }
 
-    if (orderIndex !== -1) {
-      ordersDB.data.splice(orderIndex, 1);
-      await ordersDB.write();
-      res.status(200).send("Order deleted");
-    } else {
-      res.status(404).send("Order not found");
-    }
+  try {
+    ordersDB.data.splice(orderIndex, 1);
+    await ordersDB.write();
+
+    res.status(200).send("Order deleted");
   } catch (error) {
     res.status(400).send(error);
   }
