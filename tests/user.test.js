@@ -52,6 +52,22 @@ describe("Test users methods", () => {
       });
   });
 
+  it("should return invalid user data", (done) => {
+    chai
+      .request(app)
+      .post("/api/v1/users/register")
+      .send({
+        name: "Example User",
+        phone: "abc",
+        address: "Example Address",
+      })
+      .end((err, res) => {
+        res.should.have.status(400);
+        res.text.should.be.equal("Invalid user data");
+        done();
+      });
+  });
+
   it("should create a new user", (done) => {
     chai
       .request(app)
