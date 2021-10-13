@@ -16,7 +16,7 @@ it("should return a image", (done) => {
     });
 });
 
-it("should return a html", (done) => {
+it("should return the correct html", (done) => {
   chai
     .request(app)
     .get("/")

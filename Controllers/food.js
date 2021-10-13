@@ -1,7 +1,6 @@
 import { foodsDB } from "../utils/database.js";
 
-await foodsDB.read();
-
 export async function getAllFoods(req, res) {
+  await foodsDB.read();
   res.send(foodsDB.data);
 }
