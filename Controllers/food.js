@@ -1,6 +1,11 @@
 import { foodsDB } from "../utils/database.js";
 
+let cache = [];
+
 export async function getAllFoods(req, res) {
-  await foodsDB.read();
-  res.send(foodsDB.data);
+  if (!Array.isArray(cache) || !cache.length) {
+    await foodsDB.read();
+    cache = foodsDB.data;
+  }
+  res.send(cache);
 }
