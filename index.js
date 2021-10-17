@@ -33,7 +33,7 @@ app.listen(
   process.env.NODE_ENV === "development" &&
     console.log(
       "\x1b[35m",
-      `Server running in ${process.env.NODE_ENV} mode on port http://localhost:${PORT}/`
+      `[ Server running in ${process.env.NODE_ENV} mode on port "http://localhost:${PORT}" ]`
     )
 );
 
