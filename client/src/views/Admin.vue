@@ -8,7 +8,7 @@
       <br />
       <span class="text-secondary"
         >*This server is using lowdb as a database and save the new data to a
-        .json file, so new data won't persist.*</span
+        .json file, so new data won't persist.</span
       >
       <br />
       <a

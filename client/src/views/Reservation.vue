@@ -1,6 +1,6 @@
 <template>
   <form class="form" @submit.prevent>
-    <h3>Reservation</h3 >
+    <h3>New Reservation</h3>
     <div class="mb-3">
       <label for="nameInput" class="form-label">What is your name?</label>
       <input class="form-control" id="nameInput" v-model="name" />

@@ -28,14 +28,28 @@
     </div>
     <div class="carousel-inner">
       <div class="carousel-item active">
-        <img src="../assets/home-image-1.jpg" class="d-block w-100" alt="..." />
+        <picture>
+          <source srcset="../assets/home-image-1.webp" type="image/webp" />
+          <img
+            src="../assets/home-image-1.jpg"
+            class="d-block w-100"
+            alt="..."
+          />
+        </picture>
         <div class="carousel-caption d-none d-md-block">
           <h4>Ipsum laborum</h4>
           <p>Laborum velit in Lorem laboris proident eiusmod do mollit.</p>
         </div>
       </div>
       <div class="carousel-item">
-        <img src="../assets/home-image-2.jpg" class="d-block w-100" alt="..." />
+        <picture>
+          <source srcset="../assets/home-image-2.webp" type="image/webp" />
+          <img
+            src="../assets/home-image-2.jpg"
+            class="d-block w-100"
+            alt="..."
+          />
+        </picture>
         <div class="carousel-caption d-none d-md-block">
           <h4>Amet irure excepteur</h4>
           <p>
@@ -44,7 +58,14 @@
         </div>
       </div>
       <div class="carousel-item">
-        <img src="../assets/home-image-3.jpg" class="d-block w-100" alt="..." />
+        <picture>
+          <source srcset="../assets/home-image-3.webp" type="image/webp" />
+          <img
+            src="../assets/home-image-3.jpg"
+            class="d-block w-100"
+            alt="..."
+          />
+        </picture>
         <div class="carousel-caption d-none d-md-block">
           <div class="caption">
             <h4>Laborum velit in</h4>
