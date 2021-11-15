@@ -6,6 +6,17 @@ chai.use(chaiHttp);
 chai.should();
 
 describe("Test index; html and images", () => {
+  it("should return welcome", (done) => {
+    chai
+      .request(app)
+      .get("/start")
+      .end((err, res) => {
+        res.should.have.status(200);
+        res.text.should.be.equal("Welcome to Pizza Pizza!");
+        done();
+      });
+  });
+
   it("should return a image", (done) => {
     chai
       .request(app)

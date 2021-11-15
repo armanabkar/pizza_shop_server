@@ -20,7 +20,7 @@ export async function addNewOrder(req, res) {
     ordersDB.data.push(order);
     await ordersDB.write();
 
-    res.status(200).send("Order created");
+    res.send("Order created");
   } catch (error) {
     res.status(400).send(error);
   }
@@ -39,7 +39,7 @@ export async function deleteOrder(req, res) {
     ordersDB.data.splice(orderIndex, 1);
     await ordersDB.write();
 
-    res.status(200).send("Order deleted");
+    res.send("Order deleted");
   } catch (error) {
     res.status(400).send(error);
   }

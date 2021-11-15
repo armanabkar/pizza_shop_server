@@ -20,7 +20,7 @@ export async function addNewReservation(req, res) {
     reservationsDB.data.push(reservation);
     await reservationsDB.write();
 
-    res.status(200).send("Reservation created");
+    res.send("Reservation created");
   } catch (error) {
     res.status(400).send(error);
   }
@@ -39,7 +39,7 @@ export async function deleteReservation(req, res) {
     reservationsDB.data.splice(reservationIndex, 1);
     await reservationsDB.write();
 
-    res.status(200).send("Reservation deleted");
+    res.send("Reservation deleted");
   } catch (error) {
     res.status(400).send(error);
   }

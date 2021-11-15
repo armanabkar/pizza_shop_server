@@ -22,6 +22,9 @@ app.use(express.static("dist"));
 app.get("/", (req, res) =>
   res.sendFile("dist/index.html", { root: __dirname })
 );
+app.get("/start", (req, res) => {
+  res.send("Welcome to Pizza Pizza!");
+});
 app.use("/images", express.static(__dirname + "/images"));
 
 app.use(router);

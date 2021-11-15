@@ -48,7 +48,7 @@ export async function registerUser(req, res) {
     usersDB.data.push(newUser);
     await usersDB.write();
 
-    res.status(200).json({
+    res.json({
       id: newUser.id,
       name: newUser.name,
       phone: newUser.phone,
@@ -73,7 +73,7 @@ export async function deleteUser(req, res) {
     usersDB.data.splice(userIndex, 1);
     await usersDB.write();
 
-    res.status(200).send("User deleted");
+    res.send("User deleted");
   } catch (error) {
     res.status(400).send(error);
   }
