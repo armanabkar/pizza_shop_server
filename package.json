@@ -11,7 +11,7 @@
     "test": "mocha tests/*.js --exit",
     "test:client": "cd client && npm run test"
   },
-  "author": "Arman Abkar",
+  "author": "Arman",
   "license": "ISC",
   "devDependencies": {
     "nodemon": "^2.0.13"
