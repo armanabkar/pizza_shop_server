@@ -14,7 +14,7 @@ describe("Test users methods", () => {
         res.should.have.status(200);
         res.body.should.be.a("Array");
         res.body.should.have.lengthOf(2);
-        res.body[0].name.should.be.equal("Arman Abkar");
+        res.body[0].name.should.be.equal("Arman");
         done();
       });
   });
@@ -43,7 +43,7 @@ describe("Test users methods", () => {
       .end((err, res) => {
         res.should.have.status(200);
         res.body.should.be.a("Object");
-        res.body.name.should.be.equal("Arman Abkar");
+        res.body.name.should.be.equal("Arman");
         res.body.address.should.be.equal(
           "2391 S Muddy String Rd, Thayne, WY, 83127"
         );
